@@ -62,6 +62,7 @@
             position: relative;
             z-index: 1;
             box-sizing: border-box;
+            max-width: 100%; /* 添加最大宽度限制 */
         }
 
         header {
@@ -110,7 +111,7 @@
             flex-direction: column;
             gap: 10px;
             width: 100%;
-            max-width: 350px;
+            max-width: 350px; /* 保持最大宽度 */
             margin: 10px 0;
             flex-shrink: 0;
             margin-top: -80px !important;
@@ -201,6 +202,16 @@
         }
 
         @media (max-width: 768px) {
+            .container {
+                height: calc(100vh - 30px); /* 调整小屏幕上的高度 */
+                padding: 10px 5px; /* 增加小屏幕上的边距 */
+            }
+            
+            .nav-buttons {
+                max-width: 300px; /* 在小屏幕上减小按钮最大宽度 */
+                width: 90%; /* 使用百分比宽度以适应屏幕 */
+            }
+            
             h1 {
                 font-size: 32px;
             }
@@ -217,6 +228,16 @@
         }
 
         @media (max-width: 480px) {
+            .container {
+                height: calc(100vh - 20px); /* 进一步调整更小屏幕上的高度 */
+                padding: 8px 3px; /* 调整更小屏幕上的边距 */
+            }
+            
+            .nav-buttons {
+                max-width: 280px; /* 在更小屏幕上进一步减小按钮最大宽度 */
+                width: 95%; /* 使用更大百分比宽度 */
+            }
+            
             h1 {
                 font-size: 26px;
             }
@@ -234,6 +255,29 @@
                 padding: 13px 18px;
                 font-size: 16px;
                 height: 50px; /* 调整更小屏幕下的高度 */
+            }
+        }
+        
+        /* 新增：超小屏幕适配 */
+        @media (max-width: 360px) {
+            .container {
+                height: calc(100vh - 15px);
+            }
+            
+            .nav-buttons {
+                max-width: 250px;
+                width: 100%;
+            }
+            
+            h1 {
+                font-size: 22px;
+                margin: 15px 0;
+            }
+            
+            .nav-btn {
+                padding: 12px 16px;
+                font-size: 15px;
+                height: 48px;
             }
         }
 
